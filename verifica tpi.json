@@ -1,0 +1,160 @@
+{
+    "ambienti_centrale": {
+      "aula_1": {
+        "numero_aula": 1,
+        "classe": 1,
+        "sezione": "L",
+        "numero_alunni": 23,
+        "struttura": {
+          "numero_luci": 4,
+          "dimensione": 50,
+          "presenza_lim": true,
+          "capacità_persone": 30
+        }
+      },
+      "aula_2": {
+        "numero_aula": 2,
+        "classe": 2,
+        "sezione": "L",
+        "numero_alunni": 20,
+        "struttura": {
+          "numero_luci": 4,
+          "dimensione": 50,
+          "presenza_lim": true,
+          "capacità_persone": 30
+        }
+      },
+      "palestra": {
+        "struttura": {
+          "capacità_persone": 150,
+          "n_uscite_di_sicurezza": 3,
+          "numero_luci": 16,
+          "n_estintori": 3,
+          "n_bagni_spogliatoi": 3,
+          "n_tavoli_pingpong": 6,
+          "n_tavoli_biliardino": 4,
+          "n_campi_palla_a_volo": 3
+        },
+        "presenza_attrezzature_minori": true
+      },
+      "laboratorio_chimica_1": {
+        "struttura": {
+          "capacità_persone": 25,
+          "n_uscite_di_sicurezza": 1,
+          "n_luci": 6,
+          "n_estintori": 1,
+          "numero_banchi_lavoro": 3
+        },
+        "arredamento": {
+          "n_lavandini": 3,
+          "n_cattedre": 1,
+          "presenza_attrezzature_minori": true
+        }
+      },
+      "laboratorio_chimica_2": {
+        "struttura": {
+          "capacità_persone": 20,
+          "n_uscite_di_sicurezza": 1,
+          "n_luci": 4,
+          "n_estintori": 1,
+          "numero_banchi_lavoro": 4
+        },
+        "arredamento": {
+          "n_lavandini": 1,
+          "n_cattedre": 0,
+          "presenza_attrezzature_minori": true
+        }
+      },
+      "laboratorio_informatica": {
+        "struttura": {
+          "capacità_persone": 30,
+          "n_uscite_di_sicurezza": 0,
+          "n_luci": 6,
+          "n_estintori": 0
+        },
+        "arredamento": {
+          "n_computer": 31,
+          "n_cattedre": 1,
+          "presenza_attrezzature_minori": true
+        }
+      }
+    },
+    "ambienti_succursale": {
+      "aula_3": {
+        "numero_aula": 3,
+        "classe": 3,
+        "sezione": "L",
+        "numero_alunni": 19,
+        "struttura": {
+          "numero_luci": 4,
+          "dimensione": 45,
+          "capacità_persone": 25
+        },
+        "arredamento": {
+          "presenza_lim": true,
+          "numero_banchi": 25,
+          "numero_cattedre": 1
+        }
+      },
+      "aula_4_1": {
+        "numero_aula": 4,
+        "classe": 4,
+        "sezione": "L",
+        "numero_alunni": 15,
+        "struttura": {
+          "numero_luci": 4,
+          "dimensione": 45,
+          "capacità_persone": 25
+        },
+        "arredamento": {
+          "presenza_lim": true,
+          "numero_banchi": 25,
+          "numero_cattedre": 1
+        }
+      },
+      "aula_4_2": {
+        "numero_aula": 4,
+        "classe": 4,
+        "sezione": "L",
+        "numero_alunni": 15,
+        "struttura": {
+          "numero_luci": 4,
+          "dimensione": 45,
+          "capacità_persone": 25
+        },
+        "arredamento": {
+          "presenza_lim": true,
+          "numero_banchi": 25,
+          "numero_cattedre": 1
+        }
+      },
+      "laboratorio_informatica": {
+        "struttura": {
+          "capacità_persone": 30,
+          "dimensione": 60,
+          "n_uscite_di_sicurezza": 0,
+          "n_luci": 6,
+          "n_estintori": 0
+        },
+        "arredamento": {
+          "n_computer": 31,
+          "n_cattedre": 1,
+          "presenza_attrezzature_minori": true
+        }
+      },
+      "laboratorio_tpi": {
+        "struttura": {
+          "capacità_persone": 30,
+          "dimensione": 60,
+          "n_uscite_di_sicurezza": 0,
+          "n_luci": 6,
+          "n_estintori": 0
+        },
+        "arredamento": {
+          "n_computer": 31,
+          "n_cattedre": 1,
+          "presenza_attrezzature_minori": true
+        }
+      }
+    }
+  }

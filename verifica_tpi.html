@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>STRUTTURA ITI GALILEO FERRARIS</title>
+    <style>
+        .titolo {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 50px;
+        }
+        .ambiente {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titolo">ITI GALILEO FERRARIS</h1>
+    <h2>Strutturazione classi centrale e succursale</h2>
+    
+    <h3>Centrale</h3>
+    <div class="ambienti_centrale">
+        <div class="ambiente"></div>
+        <div class="ambiente"></div>
+        <div class="ambiente"></div>
+        <div class="ambiente"></div>
+        <div class="ambiente"></div>
+        <div class="ambiente"></div>
+    </div>
+    
+    <h3>Succursale</h3>
+    <div class="ambienti_succursale">
+        <div class="ambiente"></div>
+        <div class="ambiente"></div>
+        <div class="ambiente"></div>
+        <div class="ambiente"></div>
+    </div>
+
+    <script>
+        fetch('verifica tpi.json')
+        .then((response) => response.json())
+        .then((data) => {
+            const createEnvironmentHtml = (environment, name) => {
+                return `
+                    <h4>${name}</h4>
+                    <p>Numero aula: ${environment.numero_aula || ''}, Classe: ${environment.classe || ''}, Sezione: ${environment.sezione || ''}, 
+                       Numero alunni: ${environment.numero_alunni || ''}, 
+                       Struttura - Luci: ${environment.struttura?.numero_luci || ''}, Dimensione: ${environment.struttura?.dimensione || ''}, 
+                       Presenza LIM: ${environment.struttura?.presenza_lim || ''}, Capacità persone: ${environment.struttura?.capacità_persone || ''}, 
+                       ${environment.arredamento ? 'Arredamento - Banchi: ' + environment.arredamento.numero_banchi + ', Cattedre: ' + environment.arredamento.numero_cattedre + ', ' : ''} 
+                       ${environment.arredamento ? 'Presenza attrezzature minori: ' + environment.arredamento.presenza_attrezzature_minori : ''}
+                    </p>
+                `;
+            };
+
+            // Dati della Centrale
+            document.querySelector('.ambienti_centrale').innerHTML += createEnvironmentHtml(data.ambienti_centrale.aula_1, 'Aula 1');
+            document.querySelector('.ambienti_centrale').innerHTML += createEnvironmentHtml(data.ambienti_centrale.aula_2, 'Aula 2');
+            document.querySelector('.ambienti_centrale').innerHTML += `<h4>Palestra</h4><p>Capacità: ${data.ambienti_centrale.palestra.struttura.capacità_persone}, Uscite di sicurezza: ${data.ambienti_centrale.palestra.struttura.n_uscite_di_sicurezza}, 
+            Numero luci: ${data.ambienti_centrale.palestra.struttura.numero_luci}, Estintori: ${data.ambienti_centrale.palestra.struttura.n_estintori}, 
+            Bagni spogliatoi: ${data.ambienti_centrale.palestra.struttura.n_bagni_spogliatoi}, Tavoli ping pong: ${data.ambienti_centrale.palestra.struttura.n_tavoli_pingpong}, 
+            Tavoli biliardino: ${data.ambienti_centrale.palestra.struttura.n_tavoli_biliardino}, Campi palla a volo: ${data.ambienti_centrale.palestra.struttura.n_campi_palla_a_volo}</p>`;
+            document.querySelector('.ambienti_centrale').innerHTML += createEnvironmentHtml(data.ambienti_centrale.laboratorio_chimica_1, 'Laboratorio Chimica 1');
+            document.querySelector('.ambienti_centrale').innerHTML += createEnvironmentHtml(data.ambienti_centrale.laboratorio_chimica_2, 'Laboratorio Chimica 2');
+            document.querySelector('.ambienti_centrale').innerHTML += createEnvironmentHtml(data.ambienti_centrale.laboratorio_informatica, 'Laboratorio Informatica');
+
+            // Dati della Succursale
+            document.querySelector('.ambienti_succursale').innerHTML += createEnvironmentHtml(data.ambienti_succursale.aula_3, 'Aula 3');
+            document.querySelector('.ambienti_succursale').innerHTML += createEnvironmentHtml(data.ambienti_succursale.aula_4_2, 'Aula 4');
+            document.querySelector('.ambienti_succursale').innerHTML += createEnvironmentHtml(data.ambienti_succursale.laboratorio_informatica, 'Laboratorio Informatica');
+            document.querySelector('.ambienti_succursale').innerHTML += createEnvironmentHtml(data.ambienti_succursale.laboratorio_tpi, 'Laboratorio TPI');
+        })
+        .catch((error) => console.error('Errore nel recupero del file JSON:', error));
+    </script>
+</body>
+</html>
